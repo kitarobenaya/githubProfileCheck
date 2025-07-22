@@ -1,5 +1,5 @@
-// fetch('https://api.github.com/users/kitarobenaya')
-// .then(response => response.json())
-// .then(response => {
-    
-// })
+const inputExp = document.querySelector('#searchspecified');
+
+inputExp.addEventListener('change', function() {
+    window.location.href = `result.html?user=${inputExp.value}`;
+});
