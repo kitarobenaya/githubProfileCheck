@@ -1,5 +1,13 @@
-const inputExp = document.querySelector('#searchspecified');
+const inputSm = document.querySelector('#search');
 
-inputExp.addEventListener('change', function() {
-    window.location.href = `result.html?user=${inputExp.value}`;
-});
+    inputSm.addEventListener('change', function() {
+        window.location.href = `result.html?user=${inputSm.value}`;
+        inputSm.value = '';
+    });
+
+const inputBi = document.querySelector('#search-big');
+
+    inputBi.addEventListener('change', function() {
+        window.location.href = `result.html?user=${inputBi.value}`;
+        inputBi.value = '';
+    });

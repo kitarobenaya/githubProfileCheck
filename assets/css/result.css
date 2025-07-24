@@ -64,6 +64,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     color: white;
     font-family: 'Poppins', sans-serif;
 }
@@ -86,10 +87,7 @@ main section.search-results div.img-wrap {
 main section.search-results div.img-wrap img {
     width: 100%;
     height: 100%;
-}
-
-main section.search-results div.img-wrap figcaption {
-    font-size: 0.8rem;
+    border-radius: 50%;
 }
 
 main section.search-results div.desc-wrap {
@@ -98,11 +96,25 @@ main section.search-results div.desc-wrap {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 1rem;
 }
 
 main section.search-results div.desc-wrap p {
-
+  font-weight: 800;
 }
 
+main section.search-results div.desc-wrap p span {
+  font-weight: 500;
+}
+
+main section.repos-page {
+  margin-top: 2rem;
+  width: 100%;
+  height: auto;
+}
+
+main section.repos-page h1{
+  font-size: 1.7rem;
+  margin-left: 1rem;
+}
 /* /main page */

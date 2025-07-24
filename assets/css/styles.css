@@ -9,6 +9,10 @@
 body {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #2c2f33;
 }
 
@@ -61,9 +65,11 @@ header nav input {
 main {
   width: 100%;
   height: auto;
+  flex: 1;
 }
 
-main section.header {
+/* top page */
+main section.top {
   width: 100%;
   height: auto;
   display: flex;
@@ -77,14 +83,16 @@ main section.header {
   margin-top: 2rem;
 }
 
-main section.header h1 {
+main section.top h1 {
   font-size: 2rem;
 }
 
-main section.header p {
+main section.top p {
   font-size: 1.2rem;
 }
+/* /top page */
 
+/* main-content page */
 main section.main-content {
   width: 100%;
   height: auto;
@@ -94,15 +102,103 @@ main section.main-content {
   margin-top: 5rem;
 }
 
-main section.main-content input{
+main section.main-content input {
   width: 70%;
   border: 2px solid #4f545c;
   height: 50px;
   padding: 10px 15px 10px 15px;
-  margin-right: 10px;
   border-radius: 5px;
   font-size: 1.2rem;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
 }
+/* /main-content page */
+
+/* description-project page */
+main section.description-project {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  row-gap: 15px;
+  font-weight: 800;
+  margin-top: 5rem;
+}
+
+main section.description-project h1 {
+  font-size: 2rem;
+}
+
+main section.description-project p {
+  max-width: 80%;
+  text-align: justify;
+}
+/* /description-project page */
+
 /* /main page */
+
+/* footer page */
+
+footer {
+  width: 100%;
+  height: 20px;
+  background-color: #363936;
+  text-align: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: small;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* /footer page */
+
+/* responsive */
+@media screen and (max-width: 478px) {
+  /* header page */
+  header nav input {
+    width: 50%;
+  }
+  /* /header page */
+
+  /* top page */
+  main section.top h1 {
+    font-size: 1.3rem;
+  }
+
+  main section.top p {
+    font-size: 0.9rem;
+    max-width: 80%;
+    text-align: justify;
+  }
+  /* /top page */
+
+  /* main-content page */
+  main section.main-content {
+    margin-top: 3rem;
+  }
+
+  main section.main-content input {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  /* /main-content page */
+
+  /* description-project page */
+  main section.description-project h1 {
+    font-size: 1.3rem;
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  main section.description-project p {
+    font-size: 0.8rem;
+  }
+  /* /description-project page */
+}
+/* /responsive */
