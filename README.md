@@ -20,3 +20,8 @@ This project is a simple web application that allows users to search for GitHub 
 ## 📝 The purpose of this project
 
 This project is built for me to learn how to use the GitHub API, how to use fetch API to get data from the server and learn asynchronous javascript.
+
+## 🛠️ Upgrade plan (to - do)
+- Add more features to the app, such as searching for repositories or issues
+- Improve the UI and UX of the app
+- Add error handling and validation for user input

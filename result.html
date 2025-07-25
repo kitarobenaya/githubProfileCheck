@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Result search</title>
-    <link rel="stylesheet" href="assets/css/result.css">
+    <link rel="stylesheet" href="assets/css/result.css" />
   </head>
   <body>
     <header>
@@ -26,16 +26,23 @@
       </nav>
     </header>
     <main>
-        <section class="search-results">
-        </section>
+      <section class="search-results">
+        <!-- search results will dynamically inserted here -->
+      </section>
 
-        <section class="repos-page">
-            <h1>Your Repos:</h1>
-            <div class="container">
-              
-            </div>
-        </section>
+      <section class="repos-page">
+        <h1>Your Repos:</h1>
+        <div class="container">
+          <ul class="repos-list">
+            <!-- Repositories will be dynamically inserted here -->
+          </ul>
+        </div>
+      </section>
     </main>
+    <footer>
+      <p>Made By Kitaro with ❤️</p>
+    </footer>
+
     <script src="assets/js/result.js"></script>
   </body>
 </html>
