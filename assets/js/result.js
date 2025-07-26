@@ -5,14 +5,16 @@ const params = new URLSearchParams(window.location.search);
 const username = params.get("user");
 
 fetch(`https://api.github.com/users/${username}`)
-  .then((response) => response.json())
   .then((response) => {
-    if (response.status == 404) {
+    if (!response.ok) {
       sectionSearchResult.innerHTML = `<h2 class="error">User not found. Please check the username and try again.</h2>`;
-      sectionRepos.innerHTML = `<h2 class="error" style='text-align: center;'>No repositories found for this user.</h2>`;
-    } else {
-      sectionSearchResult.innerHTML = renderDataProfile(response);
+      sectionRepos.innerHTML = '';
+      throw new Error("User not found");
     }
+    return response.json();
+  })
+  .then((response) => {
+      sectionSearchResult.innerHTML = renderDataProfile(response);
   });
 
 function renderDataProfile(data) {
@@ -35,7 +37,12 @@ function renderDataProfile(data) {
 }
 
 fetch(`https://api.github.com/users/${username}/repos`)
-  .then((response) => response.json())
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Repositories not found");
+    } 
+    return response.json();
+  })
   .then((response) => {
     const listRepos = document.querySelector(
       "section.repos-page div.container ul"
