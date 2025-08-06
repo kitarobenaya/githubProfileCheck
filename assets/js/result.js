@@ -1,9 +1,14 @@
 const sectionSearchResult = document.querySelector("section.search-results");
 const sectionRepos = document.querySelector("section.repos-page");
+const mask = document.querySelector("div.mask-loading");
 
 const params = new URLSearchParams(window.location.search);
 const username = params.get("user");
 
+document.title = `GitHub Profile Check - ${username}`;
+
+sectionRepos.style.display = "none";
+mask.style.display = "flex";
 fetch(`https://api.github.com/users/${username}`)
   .then((response) => {
     if (!response.ok) {
@@ -15,7 +20,10 @@ fetch(`https://api.github.com/users/${username}`)
   })
   .then((response) => {
       sectionSearchResult.innerHTML = renderDataProfile(response);
+      mask.style.display = "none";
+      sectionRepos.style.display = "block";
   });
+
 
 function renderDataProfile(data) {
   return `
