@@ -47,6 +47,7 @@ function renderDataProfile(data) {
 fetch(`https://api.github.com/users/${username}/repos`)
   .then((response) => {
     if (!response.ok) {
+      sectionRepos.innerHTML = `<h2 class="error">Repositories not found for this user.</h2>`;
       throw new Error("Repositories not found");
     } 
     return response.json();
@@ -55,6 +56,10 @@ fetch(`https://api.github.com/users/${username}/repos`)
     const listRepos = document.querySelector(
       "section.repos-page div.container ul"
     );
+    if (response.length === 0) {
+      listRepos.innerHTML = `<li><h2 class="error" style='text-align: center;'>No repositories found for this user.</h2></li>`;
+      return;
+    }
     response.map((repo) => {
       listRepos.innerHTML += renderDataRepos(repo);
     });
