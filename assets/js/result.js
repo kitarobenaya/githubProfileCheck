@@ -13,6 +13,7 @@ fetch(`https://api.github.com/users/${username}`)
   .then((response) => {
     if (!response.ok) {
       sectionSearchResult.innerHTML = `<h2 class="error">User not found. Please check the username and try again.</h2>`;
+      mask.style.display = "none";
       sectionRepos.innerHTML = '';
       throw new Error("User not found");
     }
